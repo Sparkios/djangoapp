@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="jumbotron text-center">
+    <h3>Welcome to the real blog world!</h3>
+    <hr>
+    <p>Are you ready to hear new things, to learn, to be excited, to be motivated? Then welcome stranger</p>
+    <p>I also suggest you take a look at my newly written ebook = <a href="https://www.etsy.com/listing/1432590789/unleash-your-inner-champion-how-to?ref=listings_manager_grid">Unsatisfied</a> </p>
+   
+    <hr>
+</div>
+<ul>
+{% for number in numbers  %}
+<li>{{number}}</li>
+
+{% endfor %}
+</ul>
+
+<p>
+    {% if request.user.is_authenticated %}
+            Logged in: {{request.user.username}}
+    {% else %}
+            Not logged in
+    {% endif %}
+
+
+</p>
+
+
+{% endblock body %}
